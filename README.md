@@ -1,3 +1,5 @@
+![img js](https://pluralsight2.imgix.net/paths/images/javascript-542e10ea6e.png)
+
 In this project I got more eperence using the command line interface. I was also able to practice refactoring. 
 
 <br>
