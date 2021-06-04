@@ -1,37 +1,104 @@
-## Welcome to GitHub Pages
+In this project I got more eperence using the command line interface. I was also able to practice refactoring. 
 
-You can use the [editor on GitHub](https://github.com/tguthrie1765/cit281-p2/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+<br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Here is the code for project 2
+```js
+/*
+    CIT 281 Project 2
+    Name: Thomas Guthrie
+*/
 
-### Markdown
+// Returns a random number between min (inclusive) and max (exclusive)
+const getRandomInteger = function(minLength, maxLength) {
+    return Math.floor(Math.random() * (maxLength - minLength) + minLength);
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+let result = "";
+let string = "";
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+//returns a single random letter from alphabet from 0 to the length of alphabet
+const getRandomLetter = function(){
 
-**Bold** and _Italic_ and `Code` text
+    let randomNumber = getRandomInteger(0,alphabet.length-1)
+   
+    let letter = alphabet[randomNumber];
+    
+    return letter;
+}
 
-[Link](url) and ![Image](src)
+//sets the min & max length of string, gets random length, then calls random letter until the length is filled
+const getRandomString = function(minLength, maxLength){
+    srtingLength = getRandomInteger(minLength, maxLength);
+    let i = 0
+    while (i< srtingLength){
+        string += getRandomLetter();
+        i++;
+    }
+    return string;
+}
+
+//takes string converts to array, sorts, converts to string, removes commas
+const getSortedString = function(string){
+    return string.split("").sort().toString().replace(/,/g, "");
+ }
+ 
+ console.log(getRandomString(10,20));
+ 
+ for (let i = 0; i < getRandomInteger(5, 26); i++) {
+    result += alphabet[getRandomLetter(1,alphabet.length-1)];
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+```js
+/*
+    CIT 281 Project 2
+    Name: Thomas Guthrie
+*/
 
-### Jekyll Themes
+// Returns a random number between min (inclusive) and max (exclusive)
+function getRandomInteger(minLength, maxLength) {
+    return Math.floor(Math.random() * (maxLength - minLength) + minLength);
+}
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tguthrie1765/cit281-p2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+let result = "";
+let string = "";
 
-### Support or Contact
+for (let i = 0; i < getRandomInteger(5, 26); i++) {
+    result += alphabet[getRandomLetter(1,alphabet.length-1)];
+}
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+//returns a single random letter from alphabet from 0 to the length of alphabet
+function getRandomLetter(){
+
+    let randomNumber = getRandomInteger(0,alphabet.length-1)
+   
+    let letter = alphabet[randomNumber];
+    
+    return letter;
+}
+
+//sets the min & max length of string, gets random length, then calls random letter until the length is filled
+function getRandomString(minLength, maxLength){
+    srtingLength = getRandomInteger(minLength, maxLength);
+    let i = 0
+    while (i< srtingLength){
+        string += getRandomLetter();
+        i++;
+    }
+    return string;
+}
+
+//takes string converts to array, sorts, converts to string, removes commas
+function getSortedString(string){
+    return string.split("").sort().toString().replace(/,/g, "");
+ }
+ 
+ console.log(getRandomString(10,20));
+ ```
